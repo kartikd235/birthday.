@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday My Love ❤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3.5em;
+      color: #fff;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+    }
+    p {
+      font-size: 1.5em;
+      color: #fff;
+      margin-top: 15px;
+      animation: fadeIn 3s;
+      text-align: center;
+      width: 80%;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #fff, 0 0 40px #ff4081; }
+      to { text-shadow: 0 0 40px #fff, 0 0 80px #ff4081; }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .btn {
+      margin-top: 40px;
+      padding: 15px 35px;
+      font-size: 1.5em;
+      background: #ff4081;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff1c6f;
+      transform: scale(1.1);
+    }
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.7);
+      font-size: 2em;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday Meri Jaan ❤</h1>
+  <p>आज का दिन सबसे खास है... क्योंकि मेरी ज़िन्दगी की रानी का जन्मदिन है 💖</p>
+  <button class="btn" onclick="location.href='main.html'">👉 चलो Surprise देखो</button>
+
+  <script>
+    // Floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.innerHTML = "❤";
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
